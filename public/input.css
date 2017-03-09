@@ -1,0 +1,41 @@
+body {
+  padding-top: 70px
+}
+
+.container-fluid {
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.navbar {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.youtube1 {
+  position: absolute;
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: 5px;
+  margin-left: 5px;
+  opacity: 0.5;
+}
+
+.youtube2 {
+  position: absolute;
+  padding-right: 0;
+  padding-left: 0;
+  margin-right: 5px;
+  margin-left: 5px;
+  opacity: 0.5;
+}
+
+.navbar-right {
+  margin-right: 15px;
+}
+
+.navbar-left {
+  margin-left: 15px;
+}
