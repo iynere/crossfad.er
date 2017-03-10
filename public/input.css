@@ -33,9 +33,38 @@ body {
 }
 
 .navbar-right {
-  margin-right: 15px;
+  margin-right: 25px;
+  float: right;
 }
 
 .navbar-left {
-  margin-left: 15px;
+  float: left;
+  margin-left: 25px;
+}
+
+.col-sm-2 {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.col-sm-4 {
+  margin-left: auto;
+  margin-right: auto;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.a-slider {
+  margin-top: 10px;
+}
+
+.v-slider {
+  margin-top: 10px; 
+}
+
+.navbar-top-text {
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: 13px;
+  margin-right: 13px;
 }
