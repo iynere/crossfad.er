@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import {Link} from 'react-router'
 import YouTube from 'react-youtube'
+import YouTubeSearch from 'react-youtube-autocomplete'
 import Slider from 'react-bootstrap-slider'
 import $ from 'jquery'
 
@@ -15,15 +16,39 @@ class App extends Component {
 		super()
 		
 		this.state = {
+			// audio slider params
 			aFade: 100,
 			aMin: 0,
 			aMax: 200,
 			aStep: 1,
+			
+			// video slider params
 			vFade: 50,
 			vMin: 0,
 			vMax: 100,
-			vStep: 1
+			vStep: 1,
+			
+			// currently loaded videos
+			leftUrl: '',
+			rightUrl: '',
+			
+			// will play nxt (need to code this still)
+			queue: {
+				leftQ: [],
+				rightQ: []
+			},
+			
+			// to be saved to local storage, elsewhere, if usr desires, once i code it in
+			set: {
+				name: '',
+				leftList: [],
+				rightList: []
+			}
 		}
+		
+		// function bindings
+		this.addToLeftPlayer = this.addToLeftPlayer.bind(this)
+		this.addToRightPlayer = this.addToRightPlayer.bind(this)
 		this.initializeVideo1 = this.initializeVideo1.bind(this)
 		this.initializeVideo2 = this.initializeVideo2.bind(this)
 		this.playPauseVideo1 = this.playPauseVideo1.bind(this)
@@ -31,8 +56,30 @@ class App extends Component {
 		this.updateVideoInstance1 = this.updateVideoInstance1.bind(this)
 		this.updateVideoInstance2 = this.updateVideoInstance2.bind(this)
 		this.isPlaying = this.isPlaying.bind(this)
+		this.isPaused = this.isPaused.bind(this)
 		this.aHandleChange = this.aHandleChange.bind(this)
 		this.vHandleChange = this.vHandleChange.bind(this)
+	}
+	
+	componentDidUpdate() {
+		// console.log('VID1', this.video1)
+		// console.log('VID2', this.video2)
+	}
+	
+	addToLeftPlayer(results) {
+		if (!this.isPlaying(this.video1)) {
+			this.setState({
+				leftUrl: results[0].id.videoId
+			})
+		} 
+	}
+	
+	addToRightPlayer(results) {
+		if (!this.isPlaying(this.video2)) {
+			this.setState({
+				rightUrl: results[0].id.videoId
+			})
+		}
 	}
 	
 	initializeVideo1(event) {
@@ -46,7 +93,7 @@ class App extends Component {
 	}
 	
 	updateVideoInstance1(event) {
-		this.video1 = event.target
+		this.video1 = event.target // will run on any player state change so we always have access to updated player information
 	}
 	
 	updateVideoInstance2(event) {
@@ -55,12 +102,28 @@ class App extends Component {
 	
 	playPauseVideo1(event) {
 		event.preventDefault()
+		this.setState({ // don't want to add a song to yr set if u nvr start playing it
+			set: {
+				leftList: this.state.set.leftList.concat(this.state.leftUrl),
+				rightList: this.state.set.rightList
+			}
+		})
 		this.isPlaying(this.video1) ? this.video1.pauseVideo() : this.video1.playVideo()
 	}
 	
 	playPauseVideo2(event) {
 		event.preventDefault()
+		this.setState({
+			set: {
+				leftList: this.state.set.leftList,
+				rightList: this.state.set.rightList.concat(this.state.rightUrl)
+			}
+		})
 		this.isPlaying(this.video2) ? this.video2.pauseVideo() : this.video2.playVideo()
+	}
+	
+	isPaused(video) {
+		return video.getPlayerState() === 2
 	}
 	
 	isPlaying(video) {
@@ -121,46 +184,75 @@ class App extends Component {
 				<nav className="navbar navbar-default navbar-fixed-top">
 					<div className="container-fluid">
 						<div className="row">
-							<div className="col-sm-2">
+							<div className="col-sm-1">
 							
 								{/* button1 */}
 								<button
 									className="btn btn-default navbar-btn navbar-left"
 									onClick={this.playPauseVideo1}>
-									play video 1
+									vid 1 p/p
 								</button>
 							</div>
-							<div className="col-sm-4 a-slider">
-								<span className="navbar-top-text">audio  </span>
-								
-								{/* slider1 */}
-								<Slider 
-									value={this.state.aFade}
-									change={this.aHandleChange}
-									step={this.state.aStep}
-									max={this.state.aMax}
-									min={this.state.aMin}
-								/>
+							
+							{/* slider1 */}
+							<div>
+								<div className="col-sm-3 a-slider">
+									<span className="navbar-top-text">audio  </span>
+									<Slider 
+										value={this.state.aFade}
+										change={this.aHandleChange}
+										step={this.state.aStep}
+										max={this.state.aMax}
+										min={this.state.aMin}
+										tooltip='hide'
+									/>
+								</div>
 							</div>
-							<div className="col-sm-4 v-slider">
-								
-								{/* slider2 */}
-								<Slider 
-									value={this.state.vFade}
-									change={this.vHandleChange}
-									step={this.state.vStep}
-									max={this.state.vMax}
-									min={this.state.vMin}
-								/>
-								<span className="navbar-top-text">  video</span>
-							</div>
+							
+							{/* search */}
 							<div className="col-sm-2">
+								<div className="navbar-left navbar-form">
+									<YouTubeSearch
+										apiKey='AIzaSyBOr-nJwESPXBlOSh-4-bf2R-ayOTUFVt4'
+										maxResults='5'
+										placeHolder={`search1`}
+										callback={this.addToLeftPlayer} 
+									/>
+								</div>
+							</div>
+							
+							<div className="col-sm-2">
+								<div className="navbar-left navbar-form">
+									<YouTubeSearch
+										apiKey='AIzaSyBOr-nJwESPXBlOSh-4-bf2R-ayOTUFVt4'
+										maxResults='5'
+										placeHolder={`search2`}
+										callback={this.addToRightPlayer} 
+									/>
+								</div>
+							</div>
+							
+							{/* slider2 */}
+							<div>
+								<div className="col-sm-3 v-slider">
+									<Slider 
+										value={this.state.vFade}
+										change={this.vHandleChange}
+										step={this.state.vStep}
+										max={this.state.vMax}
+										min={this.state.vMin}
+										tooltip='hide'
+									/>
+									<span className="navbar-top-text">  video</span>
+								</div>
+							</div>
+							<div className="col-sm-1">
 								
 								{/* button2 */}
 								<button
 									className="btn btn-default navbar-btn navbar-right"
 									onClick={this.playPauseVideo2}>
-									play video 2
+									vid 2 p/p
 								</button>
 							</div>
 						</div>
@@ -171,20 +263,22 @@ class App extends Component {
 				<div className="container-fluid">
 					<div className="youtube1">
 						<YouTube
-							videoId='v5kRrLmGJho'
+							videoId={/*'v5kRrLmGJho'*/ this.state.leftUrl}
 							opts={options}
 							onReady={this.initializeVideo1} // saves the video event 'video1' for later use
 							onPlay={this.updateVideoInstance1} // updates video event
 							onPause={this.updateVideoInstance1}  // updates video event
+							onStateChange={this.updateVideoInstance1}  // updates video event
 						/>
 					</div>
 					<div className="youtube2">
 						<YouTube
-							videoId='LOpRj927vRc'
+							videoId={/*'LOpRj927vRc'*/ this.state.rightUrl}
 							opts={options}
 							onReady={this.initializeVideo2}
 							onPlay={this.updateVideoInstance2} 
 							onPause={this.updateVideoInstance2}
+							onStateChange={this.updateVideoInstance2}  // updates video event
 						/>
 					</div>
 				</div>
