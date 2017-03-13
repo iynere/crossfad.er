@@ -4,7 +4,7 @@ a simple youtube crossfader
 
 ## works
 
-you can search for songs, add them to your left or right queue, play/pause, skip songs, fade audio & video, view your queues and click on a song to play it immediately, ahead of everything else
+you can search for songs (or manually paste in a youtube video url), add them to your left or right queue, play/pause, skip songs, fade audio & video, view your queues and click on a song to play it immediately, ahead of everything else
 
 ## to come
 
@@ -12,7 +12,7 @@ you can search for songs, add them to your left or right queue, play/pause, skip
 - view & load sets saved by others
 - possible integration with youtube accounts/playlists
 - complete rewrite with better structure & design lol
-- 'full-screen' option for 2nd monitors / projectors
+- full-screen option for 2nd monitors / projectors
 
 ## inspo
 
