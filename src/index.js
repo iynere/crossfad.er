@@ -4,8 +4,8 @@ import {Router, Route, browserHistory} from 'react-router'
 import App from './App'
 
 render(
-  <Router history={browserHistory}>
-    <Route path="/" component={App} />
-  </Router>,
-  document.getElementById('app')
+	<Router history={browserHistory}>
+		<Route path="/" component={App} />
+	</Router>,
+	document.getElementById('app')
 );
