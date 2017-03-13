@@ -457,7 +457,7 @@ class App extends Component {
 							</div>
 							<div className="col-sm-4">
 								<div className="bottom-right">
-									<span className="navbar-text navbar-right">built by <Link to="http://github.com/isar0se">r0se</Link> in 4 days in 2017 for <Link to="http://gracehopper.com">grace hopper academy</Link>
+									<span className="navbar-text navbar-right">built by <a href="http://github.com/isar0se">r0se</a> in 4 days in 2017 for <a href="http://gracehopper.com">grace hopper academy</a>
 									</span>
 								</div>
 							</div>
