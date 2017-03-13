@@ -417,7 +417,7 @@ class App extends Component {
             <div className="row">
               <div className="col-sm-4">
                 <div className="bottom-left">
-                  <a href="https://github.com/isar0se/crossfad.er" className="navbar-text navbar-left">crossfad.er</a>
+                  <a href="https://github.com/isar0se/crossfad.er" className="navbar-text navbar-left">crossfad.er</a><div className="navbar-text navbar-left"><i><a href="http://crossfader-screens.tumblr.com">submit screenshots </a></i></div>
                 </div>
               </div>
               <div className="col-sm-4">
