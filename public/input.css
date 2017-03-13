@@ -55,21 +55,55 @@ body {
   padding-left: 0;
 }
 
-.col-sm-2 {
+.sm-2-top {
   padding-right: 0;
   padding-left: 0;
 }
 
-.col-sm-3 {
-  margin-left: auto;
+.align-left {
   margin-right: auto;
+  margin-left: 0;
+}
+
+.align-right {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.col-sm-3 {
+  margin: auto;
   padding-right: 0;
   padding-left: 0;
 }
 
 .col-sm-4 {
-  margin-top: auto;
-  margin-bottom: auto;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.bottom-left {
+  width: 100%;
+  margin: auto auto auto 0;
+  padding: auto auto auto 0;
+}
+
+.bottom-center {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: auto;
+  padding-right: auto;
+}
+
+/*.btn-group {
+  margin: 0;
+  padding: 0;
+}*/
+
+.bottom-right {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .a-slider {
@@ -171,4 +205,17 @@ body {
 }
 .modal-container .modal, .modal-container .modal-backdrop {
   position: absolute;
+}
+
+.center-this {
+  width: 100%;
+  margin: auto;
+}
+
+.make-this-smaller {
+  margin-top: 3.5px;
+  margin-bottom: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  text-align: right;
 }
