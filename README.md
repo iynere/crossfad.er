@@ -16,7 +16,7 @@ you can search for songs (or manually paste in a youtube video url), add them to
 
 ## inspo
 
-there have been many great youtube crossfaders over the years, but most of them haven't kept up with changes to youtube's api & none of them, to my knowledge, have incorporated crossfading video in addition to audio 
+there have been a bunch of great youtube crossfaders over the years, but most of them haven't kept up with changes to youtube's api & none of them, to my knowledge, have incorporated crossfading video in addition to audio 
 
 to name a few:
 
