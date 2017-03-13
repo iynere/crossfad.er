@@ -1,6 +1,8 @@
 # crossfad.er 
 
-a simple youtube crossfader (submit screenshots [here] (https://crossfader-screens.tumblr.com) ~)
+a simple youtube crossfader
+
+*[submit screenshots] (https://crossfader-screens.tumblr.com) ~*
 
 ## works
 
