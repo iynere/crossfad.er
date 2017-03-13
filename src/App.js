@@ -3,7 +3,7 @@ import {Link} from 'react-router'
 import {DropdownButton, MenuItem} from 'react-bootstrap'
 import Slider from 'react-bootstrap-slider'
 import YouTube from 'react-youtube'
-import YouTubeSearch from './YouTubeSearch'
+import YouTubeSearch from 'react-youtube-autocomplete'
 import $ from 'jquery'
 import {isPlaying} from './utils'
 
