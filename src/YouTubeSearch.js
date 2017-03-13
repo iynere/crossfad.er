@@ -74,7 +74,7 @@ class YoutubeAutocomplete extends Component {
         q           : searchTerm,
         maxResults  : 5,
         videoEmbeddable: true,
-        safeSearch: 'moderate' // change to 'moderate' for stackathon demo
+        safeSearch: 'none'
       };
     
     YoutubeClient.search(params, (error,results) => {
