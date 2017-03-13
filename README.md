@@ -27,4 +27,6 @@ to name a few:
 - http://yourtubemix.com
 - http://youtubedoubler.com
 
+---
+
 *built with [create-react-app] (https://github.com/facebookincubator/create-react-app), for a [grace hopper academy] (http://gracehopper.com) 'stackathon'*
