@@ -31,4 +31,4 @@ to name a few:
 
 ---
 
-*built with [create-react-app] (https://github.com/facebookincubator/create-react-app), for a [grace hopper] (http://gracehopper.com) / [fullstack academy] (http://fullstackacademy.com) 'stackathon'*
+*built with [create-react-app](https://github.com/facebookincubator/create-react-app), for a [grace hopper](http://gracehopper.com) / [fullstack academy](http://fullstackacademy.com) 'stackathon'*
