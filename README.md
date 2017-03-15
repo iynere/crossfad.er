@@ -2,7 +2,7 @@
 
 a simple youtube crossfader
 
-*[submit screenshots] (https://crossfader-screens.tumblr.com) ~*
+*[submit screenshots](https://crossfader-screens.tumblr.com) ~*
 
 ## works
 
