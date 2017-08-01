@@ -417,7 +417,7 @@ class App extends Component {
             <div className="row">
               <div className="col-sm-4">
                 <div className="bottom-left">
-                  <a href="https://github.com/isar0se/crossfad.er" className="navbar-text navbar-left">crossfad.er</a><div className="navbar-text navbar-left"><i><a href="http://crossfader-screens.tumblr.com">submit screenshots </a></i></div>
+                  <a href="https://github.com/iynere/crossfad.er" className="navbar-text navbar-left">crossfad.er</a><div className="navbar-text navbar-left"><i><a href="https://vjays-screens.tumblr.com/">submit screenshots </a></i></div>
                 </div>
               </div>
               <div className="col-sm-4">
@@ -443,7 +443,7 @@ class App extends Component {
               </div>
               <div className="col-sm-4">
                 <div className="bottom-right">
-                  <span className="navbar-text navbar-right">built by <a href="http://github.com/isar0se">r0se</a> in 4 days in 2017 for <a href="http://gracehopper.com">grace hopper academy</a>
+                  <span className="navbar-text navbar-right">built by <a href="http://github.com/iynere">r0se</a> in 4 days in 2017 for <a href="http://gracehopper.com">grace hopper academy</a>
                   </span>
                 </div>
               </div>
