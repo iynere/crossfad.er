@@ -270,7 +270,7 @@ class App extends Component {
   
   render() {
     
-    const options = {
+    const playerOptions = {
       width: window.innerWidth - 30,
       height: window.innerHeight - 130,
       playerVars: {
@@ -382,7 +382,7 @@ class App extends Component {
           <div className="youtube1">
             <YouTube
               videoId={this.state.leftQ.length ? this.state.leftQ[0].id : null}
-              opts={options}
+              opts={playerOptions}
               onReady={this.initializeVideo1} // saves the video event 'video1' for later use
               onPlay={this.updateVideoInstance1} // updates video event
               onPause={this.updateVideoInstance1}  // updates video event
@@ -397,7 +397,7 @@ class App extends Component {
           <div className="youtube2">
             <YouTube
               videoId={this.state.rightQ.length ? this.state.rightQ[0].id : null}
-              opts={options}
+              opts={playerOptions}
               onReady={this.initializeVideo2}
               onPlay={this.updateVideoInstance2} 
               onPause={this.updateVideoInstance2}
